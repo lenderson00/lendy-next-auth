@@ -1,10 +1,13 @@
-import type { NextPage } from 'next'
+import { NextPage } from 'next/types'
+import { singOut } from '../firebase/auth'
+import { toast } from 'react-hot-toast'
 
 const Home: NextPage = () => {
   return (
-    <>
-      Lenderson Macedo
-    </>
+  <>
+    DashBoard
+    <button onClick={async () => { void singOut(); toast.success('Deslogado') }}> DesLogar </button>
+  </>
   )
 }
 
